@@ -2,7 +2,6 @@ import type { Entrypoint } from "./deps/@denops/std/mod.ts";
 import * as path from "./deps/@std/path/mod.ts";
 import { assert, is } from "./deps/@core/unknownutil/mod.ts";
 import * as icon from "./icon.ts";
-import * as project from "./project.ts";
 import * as file from "./file.ts";
 
 const getRenderValue = (pathname: string, basePath?: string) => {
@@ -32,15 +31,6 @@ export const main: Entrypoint = (denops) => {
       return (await file.oldfiles(denops)).map((pathname) =>
         getRenderValue(pathname)
       );
-    },
-
-    projectDirectory: async (basePath, defaultPath) => {
-      assert(basePath, is.String);
-      if (!is.Undefined(defaultPath)) {
-        assert(defaultPath, is.String);
-      }
-
-      return (await project.path(basePath)) || defaultPath;
     },
   };
 };
