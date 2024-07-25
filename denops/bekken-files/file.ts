@@ -20,7 +20,7 @@ const getFilesUsingCmd = async (basePath: string, cmd: string[]) => {
   }
 };
 
-const getFileUsingDeno = async (basePath: string) => {
+const getFilesUsingDeno = async (basePath: string) => {
   const result: string[] = [];
 
   for await (const walkEntry of fs.walk(basePath)) {
@@ -46,7 +46,7 @@ const getFiles = async (denops: Denops, basePath: string) => {
 
   return cmd.length > 0
     ? await getFilesUsingCmd(basePath, cmd)
-    : await getFileUsingDeno(basePath);
+    : await getFilesUsingDeno(basePath);
 };
 
 const getOldfiles = async (denops: Denops) => {
