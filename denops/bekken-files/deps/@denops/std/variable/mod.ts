@@ -1,1 +1,1 @@
-export * from "jsr:@denops/std@7.3.0/variable";
+export * from "jsr:@denops/std@7.3.2/variable";
