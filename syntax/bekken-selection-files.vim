@@ -146,7 +146,7 @@ highlight BekkenResultFileIconJulia guifg=#a270ba
 syntax match BekkenResultFileIconPp // oneline
 highlight BekkenResultFileIconPp guifg=#302b6d
 
-syntax match BekkenResultFileIconVue /󿵂/ oneline
+syntax match BekkenResultFileIconVue // oneline
 highlight BekkenResultFileIconVue guifg=#41b883
 
 syntax match BekkenResultFileIconGrunt // oneline
