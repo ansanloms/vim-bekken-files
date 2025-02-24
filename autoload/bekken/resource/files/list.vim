@@ -23,10 +23,7 @@ export const defaultKeyMappings: dict<func(string): void> = {
 var keyMappings: dict<func> = {}
 
 export def ListAsync(Cb: func(list<dict<any>>): bool, ...args: list<any>): void
-  keyMappings->extend(copy(defaultKeyMappings))
-  if args->len() > 1
-    keyMappings->extend(copy(args[1]))
-  endif
+  keyMappings->extend(copy(args->len() > 1 ? args[1] : defaultKeyMappings))
 
   denops#request_async(
     "bekken-files", "list", [args->len() > 0 ? args[0] : expand("%:h")],

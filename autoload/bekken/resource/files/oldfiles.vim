@@ -6,10 +6,7 @@ import autoload "bekken/resource/files/list.vim" as brfl
 var keyMappings: dict<func> = {}
 
 export def ListAsync(Cb: func(list<dict<any>>): bool, ...args: list<any>): void
-  keyMappings->extend(copy(brfl.defaultKeyMappings))
-  if args->len() > 0
-    keyMappings->extend(copy(args[0]))
-  endif
+  keyMappings->extend(copy(args->len() > 0 ? args[0] : brfl.defaultKeyMappings))
 
   denops#request_async(
     "bekken-files", "oldfiles", [],
