@@ -116,7 +116,7 @@ const extension = {
   tsx: "",
   jl: "",
   pp: "",
-  vue: "",
+  vue: "",
   elm: "",
   swift: "",
   xcplayground: "",
